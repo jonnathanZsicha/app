@@ -63,9 +63,8 @@ export class LocationService {
     console.log('Direccion a guardar');
     console.log(localizacion.address);
     const refObra = this.afs.collection("localizaciones");
-    if(localizacion.uid==null){
       localizacion.uid=this.afs.createId();
-    }
+    
     refObra.doc(localizacion.uid).set(Object.assign({},localizacion),{merge: true})
   }
 

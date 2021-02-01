@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-      <ion-title>direcciones</ion-title>
+      <ion-title>direcciones guardar y sus respectivas localizaciones</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -28,7 +28,7 @@
       </agm-marker>
       <ion-item *ngFor="let location of localizaciones | async">
 
-          <agm-marker [latitude]="location.latitude" [longitude]="location.longitude" [iconUrl]="'https://cdn4.iconfinder.com/data/icons/e-commerce-icon-set/48/Bookmark_2-48.png'">
+          <agm-marker [latitude]="location.latitude" [longitude]="location.longitude" [iconUrl]="'https://cdn1.iconfinder.com/data/icons/Map-Markers-Icons-Demo-PNG/48/Map-Marker-Ball-Azure.png'">
               <agm-info-window>{{newLocation.address}}</agm-info-window>
 
           </agm-marker>
