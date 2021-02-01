@@ -8,6 +8,8 @@ import { TabsPageRoutingModule } from './tabs.router.module';
 
 import { TabsPage } from './tabs.page';
 
+
+
 @NgModule({
   imports: [
     IonicModule,

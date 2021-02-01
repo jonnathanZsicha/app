@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lista-contactos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      lista de contactos
+    </ion-list-header>
+
+    
+
+    <ion-item *ngFor="let contacto of contactos | async" >
+      <ion-avatar slot="start">
+        <img src="./avatar-finn.png">
+      </ion-avatar>
+      <ion-label (click)="editarContactoById(contacto.uid)">
+        <h2>{{contacto.name}}</h2>
+        <h3>{{contacto.email}}</h3>
+        <p>{{contacto.message}}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="nuevoContacto()">
+        <ion-icon name="arrow-forward-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  
+
+    
+  </ion-list>
+
+</ion-content>

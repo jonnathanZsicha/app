@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>direcciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h1>{{ title }}</h1>
+
+  <!-- this creates a google map on the page with the given lat/lng from -->
+  <!-- the component as the initial center of the map: -->
+  <agm-map [latitude]="lat" [longitude]="lng" (centerChange)="setNewLocation($event)">
+      <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="'https://cdn4.iconfinder.com/data/icons/essential-app-2/16/botton-on-launch-point-48.png'">
+          <agm-info-window>UPS</agm-info-window>
+
+      </agm-marker>
+
+
+      <agm-marker [latitude]="current.latitude" [longitude]="current.longitude" [iconUrl]="'https://cdn4.iconfinder.com/data/icons/essential-app-2/16/botton-on-launch-point-48.png'">
+          <agm-info-window>{{current.address}}</agm-info-window>
+
+      </agm-marker>
+
+      <agm-marker [latitude]="newLocation.latitude" [longitude]="newLocation.longitude" [iconUrl]="'https://cdn2.iconfinder.com/data/icons/pointers-5/24/pointer-top-left-48.png'">
+          <agm-info-window>{{newLocation.address}}</agm-info-window>
+
+      </agm-marker>
+      <ion-item *ngFor="let location of localizaciones | async">
+
+          <agm-marker [latitude]="location.latitude" [longitude]="location.longitude" [iconUrl]="'https://cdn4.iconfinder.com/data/icons/e-commerce-icon-set/48/Bookmark_2-48.png'">
+              <agm-info-window>{{newLocation.address}}</agm-info-window>
+
+          </agm-marker>
+      </ion-item>
+
+
+
+  </agm-map>
+
+  {{newLocation | json}}
+
+
+</ion-content>
+<footer>
+  <div style="margin-left: 25%;">
+      <ion-button (click)="saveLocation()" color="success">Guardar</ion-button>
+      <ion-button (click)="getSavedLocations()" color="danger">Cancelar</ion-button>
+  </div>
+</footer>
