@@ -18,6 +18,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { AgmCoreModule } from '@agm/core';
 
 //modulos nativos
 
@@ -33,7 +34,10 @@ import { environment } from 'src/environments/environment';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AgmCoreModule.forRoot({
+      apiKey: ''
+   })
   ],
   providers: [
     StatusBar,
